@@ -60,20 +60,34 @@ Array solution could be best option
 
 /* --- CONSTANTS --- */
 const colors ={
-    null: "null"
-    player1: "1"
-    player2: "-1"
+    null: "null",
+    player1: "1",
+    player2: "-1",
 }
 
-const win ={
+const win = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 5, 7],
+    [4, 5, 6],
+    [1, 5, 9],
+]
 
-}
+const board = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+]
 
-const board = {
-    a: ["1", "2", "3"]
-    b: ["1", "2", "3"]
-    c: ["1", "2", "3"]
-}
+// have board locations and winning formula, will give values by using indexes //
+// check box hasn't been played yet //
+// if it has, do nothing // 
+// if not, put players value down (x/o) //
+// through list of win conditions, check if any are satisfied //
+
 
 const squares = document.querySelectorAll("#squares")
 //GIVE THEM COLOUR DEFINITIONS?! 
@@ -82,7 +96,7 @@ const squares = document.querySelectorAll("#squares")
 /* --- STATE VARIABLES ---*/
 squareStatus = 0
 let turn
-let board
+let boardy
 let winner
 
 /* --- CACHED ELEMENTS---*/
@@ -91,6 +105,9 @@ const boardEl = document.querySelector("#board")
 const squareEls = document.querySelectorAll("div.square")
 
 /* --- FUNCTIONS---*/
+function render(){
+    console.log("rendering game")
+}
 
 function init(){
 console.log("starting game")
@@ -101,16 +118,16 @@ for (square of squareEls){
 render()
 }
 
-function render(){
-    console.log("rendering game")
-}
 
 function setSquare(evt) {
-squareStatus
+//squareStatus
 
 }
 
 /* --- EVENT LISTENERS ---*/
 
-boardEl.addEventListener("click", setSquare)
-btn.removeEventListener("click", handleClick);
+//boardEl.addEventListener("click", setSquare)
+//btn.removeEventListener("click", handleClick);
+
+
+// 

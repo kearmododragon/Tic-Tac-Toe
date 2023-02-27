@@ -7,7 +7,6 @@ html {
     display: flex;
     width: 80vmin;
   /* vmin - calculates the percentage of the shortest side of your viewport */ 
-    flex-wrap: wrap;
     gap: 1vmin;
   }
   
@@ -19,4 +18,9 @@ html {
 
   .inactive{
     color: lightgrey
+  }
+
+  .row{
+    display: flex; 
+    flex-direction: row;
   }
