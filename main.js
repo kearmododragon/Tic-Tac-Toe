@@ -9,31 +9,8 @@
 // PLAYER 1 = X         PLAYER 2 = O    
 
 
-//PSEUDOCODE start //
+// PSEUDOCODE start //
 /*
-1) Define required constants:
-  1.1) Define a colors object with keys of 'null' (when the square is empty), and players 1 & -1. The value assigned to each key represents the color to display for an empty square
-   (null), player 1 and player -1.
-  1.2) Define the 8 possible winning combinations, each containing three indexes of the board that make a winner if they hold the same player value.
-*/
-//1.1//
-
-/*
-2) Define required variables used to track the state of the game:
-  2.1) Use a board array to represent the squares.
-  2.2) Use a turn variable to remember whose turn it is.
-  2.3) Use a winner variable to represent three different possibilities - player that won, a tie, or game in play.
-
-
-
-
-
-3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant:
-  3.1) Store the 9 elements that represent the squares on the page.
-
-
-
-
 
 4) Upon loading the app should:
   4.1) Initialize the state variables:
@@ -81,9 +58,34 @@
 
 
 /* --- CONSTANTS --- */
+const colors ={
+    null: "0"
+    player1: "1"
+    player2: "-1"
+}
+
+const win ={
+
+}
+
+const board = {
+    a: ["1", "2", "3"]
+    b: ["1", "2", "3"]
+    c: ["1", "2", "3"]
+}
+const squares = {
+ "a1", "b1", "c1", "a2", "b2", "c3", "a3", "b3", "c3"
+
+}
+
+//GIVE THEM COLOUR DEFINITIONS?! 
+
 
 /* --- STATE VARIABLES ---*/
 squareStatus = 0
+let turn
+let board
+let winner
 
 /* --- CACHED ELEMENTS---*/
 
