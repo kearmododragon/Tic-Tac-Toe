@@ -6,15 +6,16 @@
 //{REMOVE EVENT LISTENER }
 //- Provide a `Reset Game` button that will clear the contents of the board.
 
-// PLAYER 1 = X         PLAYER 2 = O    
 
 
 // PSEUDOCODE start //
 /*
+Array solution could be best option
 
 4) Upon loading the app should:
   4.1) Initialize the state variables:
-    4.1.1) Initialize the board array to 9 nulls to represent empty squares. The 9 elements will "map" to each square, where index 0 maps to the top-left square and index 8 maps to the bottom-right square.
+    4.1.1) Initialize the board array to 9 nulls to represent empty squares. The 9 elements will "map" to each square, where index 0 maps to the top-left 
+    square and index 8 maps to the bottom-right square.
     4.1.2) Initialize whose turn it is to 1 (player 'X'). Player 'O' will be represented by -1.
     4.1.3) Initialize winner to null to represent that there is no winner or tie yet. Winner will hold the player value (1 or -1) if there's a winner. Winner will hold a 'T' if there's a tie.
   4.2) Render those state variables to the page:
@@ -59,7 +60,7 @@
 
 /* --- CONSTANTS --- */
 const colors ={
-    null: "0"
+    null: "null"
     player1: "1"
     player2: "-1"
 }
@@ -73,11 +74,8 @@ const board = {
     b: ["1", "2", "3"]
     c: ["1", "2", "3"]
 }
-const squares = {
- "a1", "b1", "c1", "a2", "b2", "c3", "a3", "b3", "c3"
 
-}
-
+const squares = document.querySelectorAll("#squares")
 //GIVE THEM COLOUR DEFINITIONS?! 
 
 
@@ -90,12 +88,16 @@ let winner
 /* --- CACHED ELEMENTS---*/
 
 const boardEl = document.querySelector("#board")
-
+const squareEls = document.querySelectorAll("div.square")
 
 /* --- FUNCTIONS---*/
 
 function init(){
 console.log("starting game")
+for (square of squareEls){
+    square.classList.contains("active")
+    square.classlist.add("inactive")
+}
 render()
 }
 
