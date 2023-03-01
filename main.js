@@ -2,7 +2,7 @@
 const colors ={
     empty: "#ffffff",
     playerX: "#ff0000",
-    playerO: "#00ff00",
+    playerO: "#3A6152",
 }
 const win = [
     [0, 1, 2,],
@@ -17,11 +17,6 @@ const win = [
 
 const board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-// have board locations and winning formula, will give values by using indexes //
-// check box hasn't been played yet //
-// if it has, do nothing // 
-// if not, put players value down (x/o) //
-// through list of win conditions, check if any are satisfied //
 
 
 const squares = document.querySelectorAll("#squares")
@@ -32,7 +27,6 @@ const squares = document.querySelectorAll("#squares")
 squareStatus = 0
 let turn = 0
 let currentPlayer = "X"
-let boardy
 let winner = "none"
 
 /* --- CACHED ELEMENTS---*/
@@ -41,6 +35,9 @@ const boardEl = document.querySelector("#board")
 const squareEls = document.querySelectorAll("div.square")
 
 /* --- FUNCTIONS---*/
+
+// following code changes the background colour of the board when selected player clicks the square
+// also advises on what an empty location will declare
 
 function render(){
   for (var i=0; i<board.length; i++) {
@@ -57,17 +54,21 @@ function render(){
   }
 }
 
-
+// check for the empty square, value should equal "0"
 
 function isSquareEmpty(boxIndex){
   return board[boxIndex] === 0
 }
+
+// 
+
 
 function setSquare(box){
   board[box.id]=currentPlayer
   render()
 }
 
+// defining the winner conditions, it will cycle through all conditions after each click and trigger if true 
 function isWinner(){
   for (var i=0; i<win.length; i++){
     if (
@@ -79,6 +80,8 @@ function isWinner(){
           }
   } return false
 }
+
+// reset the board when clicking the correct tile. also resets the title.
 function resetBoard(){
   for (var i=0; i<board.length; i++){
     board[i] = 0
@@ -88,9 +91,14 @@ function resetBoard(){
   render()
 }
 
+// changed the title to confirm it's a tie.
+
 function tie() {
   document.getElementById("header").innerHTML = "It's a TIE"
 }
+
+// advises who the winner is at the top of the page. Below it advises on switching the player after each go.
+// also stops players overwriting someone's turn
 
 function squareClicked(box) {
 if (isSquareEmpty(box.id) && winner === "none"){
@@ -99,10 +107,7 @@ if (isSquareEmpty(box.id) && winner === "none"){
       winner = currentPlayer
       console.log("game won: " + currentPlayer);
       document.getElementById("header").innerHTML = "Winner is " + winner
-      //this runs when there's a winner
-      // advise players who wins
-      // if tie advise tie
-      // add winner is box?
+
       }
     currentPlayer = currentPlayer === "X" ? "O" : "X"
     turn++
