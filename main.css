@@ -1,6 +1,9 @@
 html {
     height: 100%;
     width: 100%;
+    background-color: brown;
+    color: antiquewhite;
+    text-align: center;
   }
   
   #board {
@@ -13,7 +16,8 @@ html {
   .square{
     width: 25vmin;
     height: 25vmin;
-    border: 1px solid lightblue
+    border: 3px solid black;
+    background-color: white;
   }
 
   .inactive{

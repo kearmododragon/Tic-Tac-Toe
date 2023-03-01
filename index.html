@@ -9,29 +9,30 @@
   <script src="main.js" defer></script>
 </head>
 <body>
-  <h1> Tic Tac Toe</h1>
+  <h1 id = "header">Tic Tac Toe</h1>
   <section id="board">
     <div id = "columns">
     <div id = "A" class = "row">
-        <div id = "1"class ="square"></div>
-        <div id = "2"class ="square"></div>
-        <div id = "3"class ="square"></div>
+        <div id = "0"class ="square" onclick="squareClicked(this)"></div>
+        <div id = "1"class ="square" onclick="squareClicked(this)"></div>
+        <div id = "2"class ="square" onclick="squareClicked(this)"></div>
 
     </div>
 
     <div id = "B" class = "row">
-        <div id = "4"class ="square"></div>
-        <div id = "5"class ="square"></div>
-        <div id = "6"class ="square"></div>
+        <div id = "3"class ="square" onclick="squareClicked(this)"></div>
+        <div id = "4"class ="square" onclick="squareClicked(this)"></div>
+        <div id = "5"class ="square" onclick="squareClicked(this)"></div>
 </div>
 
     <div id = "C" class = "row">
-        <div id = "7"class ="square"></div>
-        <div id = "8"class ="square"></div>
-        <div id = "9"class ="square"></div>
+        <div id = "6"class ="square" onclick="squareClicked(this)"></div>
+        <div id = "7"class ="square" onclick="squareClicked(this)"></div>
+        <div id = "8"class ="square" onclick="squareClicked(this)"></div>
 </div>
 </div>
   </section>
+  <section><div id = "RESET"class ="square" onclick="resetBoard()">RESET</div> </section>
 </body>
 
 </html>
